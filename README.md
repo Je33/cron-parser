@@ -7,7 +7,7 @@ This tool provide the parser of cron schedule common format
 
 ## Usage
 
-Just run bin file with 3 arguments: amount (float), base currency (string) and target currency (string)
+Just run bin file with 1 argument: cron schedule string
 
  ```sh
  ./parser "*/15 1-12,15,20-23 1-4 * * /bin/command -with -parameters"
