@@ -1,7 +1,7 @@
 # Cron Schedule Parser
 
-[![GoDoc](https://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://pkg.go.dev/github.com/Je33/currency-converter)
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/Je33/currency-converter/test.yml?style=flat-square)](https://github.com/Je33/currency-converter/actions/workflows/test.yml)
+[![GoDoc](https://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://pkg.go.dev/github.com/Je33/cron-parser)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/Je33/cron-parser/test.yml?style=flat-square)](https://github.com/Je33/cron-parser/actions/workflows/test.yml)
 
 This tool provide the parser of cron schedule common format
 
