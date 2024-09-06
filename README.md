@@ -25,7 +25,6 @@ command:       /bin/command -with -parameters
 
 ```
 
-
 ## Common cron schedule format
 
 ```
@@ -43,4 +42,19 @@ command:       /bin/command -with -parameters
 | 4 | Month        | Yes        | 1-12           | * / , -              |
 | 5 | Day of week  | Yes        | 0-6            | * / , -              |
 | 6 | Command      | Yes        | Script path    | Path safe characters |
+
+## Build and Run
+
+These commands will build the parser and run it.
+```sh
+make build
+./build/parser "*/15 1-12,15,20-23 1-4 * * /bin/command -with -parameters"
+```
+
+## Run Tests and Coverage
+
+This command will run the tests and generate the coverage report
+```sh
+make test
+```
 

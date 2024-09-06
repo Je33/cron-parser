@@ -18,6 +18,7 @@ func main() {
 	args := flag.Args()
 	if len(args) != 1 {
 		fmt.Println("please specify cron schedule, format: [minute] [hour] [day_month] [month] [day_week] [command], example: */15 1,12 1-4 * * /bin/command -with -parameters")
+		return
 	}
 
 	periodParser := period.NewParser()
@@ -34,6 +35,7 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("please specify cron schedule, format: [minute] [hour] [day_month] [month] [day_week] [command], example: */15 1,12 1-4 * * /bin/command -with -parameters")
+		return
 	}
 
 	fmt.Printf("minutes:       %+v\n", strings.Join(res.Minute, " "))
