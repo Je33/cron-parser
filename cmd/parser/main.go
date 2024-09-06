@@ -12,12 +12,14 @@ import (
 	"strings"
 )
 
+const argMessage = `please specify cron schedule, format: "[minute] [hour] [day of month] [month] [day of week] [command]", example: "*/15 1,12 1-4 * * /bin/command -with -parameters"`
+
 func main() {
 	flag.Parse()
 
 	args := flag.Args()
 	if len(args) != 1 {
-		fmt.Println("please specify cron schedule, format: [minute] [hour] [day_month] [month] [day_week] [command], example: */15 1,12 1-4 * * /bin/command -with -parameters")
+		fmt.Println(argMessage)
 		return
 	}
 
@@ -34,14 +36,14 @@ func main() {
 	res, err := parser.Parse(args[0])
 	if err != nil {
 		fmt.Println(err)
-		fmt.Println("please specify cron schedule, format: [minute] [hour] [day_month] [month] [day_week] [command], example: */15 1,12 1-4 * * /bin/command -with -parameters")
+		fmt.Println(argMessage)
 		return
 	}
 
-	fmt.Printf("minutes:       %+v\n", strings.Join(res.Minute, " "))
-	fmt.Printf("hours:         %+v\n", strings.Join(res.Hour, " "))
-	fmt.Printf("days of month: %+v\n", strings.Join(res.DayMonth, " "))
-	fmt.Printf("months:        %+v\n", strings.Join(res.Month, " "))
-	fmt.Printf("days of week:  %+v\n", strings.Join(res.DayWeek, " "))
-	fmt.Printf("command:       %+v\n", res.Command)
+	fmt.Printf("minutes:       %s\n", strings.Join(res.Minute, " "))
+	fmt.Printf("hours:         %s\n", strings.Join(res.Hour, " "))
+	fmt.Printf("days of month: %s\n", strings.Join(res.DayMonth, " "))
+	fmt.Printf("months:        %s\n", strings.Join(res.Month, " "))
+	fmt.Printf("days of week:  %s\n", strings.Join(res.DayWeek, " "))
+	fmt.Printf("command:       %s\n", res.Command)
 }
